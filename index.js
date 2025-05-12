@@ -61,7 +61,21 @@ app.get('/evaluation-service/even',(req,res) =>{
     res.send(result);
 });
 
+app.get('/evaluation-service/rand')
+{
+  const length = 10;
+  const min = 2;
+  const max= 23;
+   const randomArray = [];
+  for (let i = 0; i < length; i++) {
+    const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+    randomArray.push(randomNumber);
+  }
+  res.send(randomArray);
 
+}
+
+console.log(getRandomIntRange(5, 15)); // Output: a random integer between 5 and 15
 
 app.listen(5000,()=>{
     console.log("Running in port 5000");
